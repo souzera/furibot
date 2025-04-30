@@ -1,8 +1,12 @@
+import os
+from dotenv import load_dotenv
+
 class Enviroment:
 
     @staticmethod
     def get_enviroment():
-        import os
+
+        load_dotenv()
 
         env = {
             "bot_token": os.getenv("BOT_TOKEN"),

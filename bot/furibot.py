@@ -1,4 +1,3 @@
-from os import getenv
 
 from aiogram import Bot, Dispatcher, html
 from aiogram.client.default import DefaultBotProperties
@@ -13,13 +12,9 @@ class Furibot:
 
         env = Enviroment.get_enviroment()
         print(f"Running in {env} mode")
-
-        TOKEN = getenv("BOT_TOKEN")
-        if not TOKEN:
-            raise ValueError("BOT_TOKEN environment variable is not set.")
         
 
-        self.bot = Bot(token=TOKEN, default=DefaultBotProperties(parse_mode=ParseMode.HTML))
+        self.bot = Bot(token=env['bot_token'], default=DefaultBotProperties(parse_mode=ParseMode.HTML))
         self.dp = Dispatcher()
         self.commander = FuriCommands(self.dp)
 
