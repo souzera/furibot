@@ -2,7 +2,6 @@
 
 ## Guia de instalacao
 
-
 [ RECOMENDADO ] Primeiramente, crie e ative um ambiente virtual python utilizando o comando a seguir, lembre-se de considerar os diferentes cenarios relacionados principalmente a qual seu sistema operacional
 
 ```bash
