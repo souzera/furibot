@@ -1,6 +1,7 @@
+import sys
+import time
 import asyncio
 import logging
-import sys
 from os import getenv
 
 from bot.furibot import Furibot
@@ -8,6 +9,7 @@ from bot.furibot import Furibot
 from config.installer import WebdriverInstaller
 
 from scraping.hltv import HltvScraper
+from scraping.routine import HltvRoutine
 
 TOKEN = getenv("BOT_TOKEN")
 
@@ -15,10 +17,11 @@ bot = Furibot()
 
 driver = WebdriverInstaller.install_webdriver("firefox")
 scraper = HltvScraper(base="https://www.hltv.org/", webdriver=driver)
+routine = HltvRoutine(scraper)
 
 if __name__ == "__main__":
 
-    scraper.opening_base()
+    routine.run()
 
-    logging.basicConfig(level=logging.INFO, stream=sys.stdout)
-    asyncio.run(bot.start())
+    # ogging.basicConfig(level=logging.INFO, stream=sys.stdout)
+    # asyncio.run(bot.start())
