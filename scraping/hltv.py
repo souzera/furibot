@@ -44,31 +44,35 @@ class HltvScraper:
 
     
     def collect_ranking(self):
+
+        def collect_players(team):
+            team_players = team.find_elements(By.CLASS_NAME, "rankingNicknames")
+            team_players = [player.text for player in team_players]
+
+            if "" in team_players:
+                team_players = team.find_elements(By.CLASS_NAME, "nick")
+                team_players = [player.text for player in team_players]
+
+            return team_players
+
         try:
             elements = self.driver.find_elements(By.CLASS_NAME, "ranked-team")
-
-            elements[0].click()
 
             teams = []
             for team in elements:
                 team_name = team.find_element(By.CLASS_NAME, "name").text
                 team_rank = team.find_element(By.CLASS_NAME, "position").text
                 team_points = team.find_element(By.CLASS_NAME, "points").text
-
-                # TODO: Error on trying to get players of expanded container teams
-                
-                team_players = team.find_elements(By.CLASS_NAME, "rankingNicknames")
-                team_players = [player.text for player in team_players]
-                
                 
                 teams.append({
                     "rank": team_rank,
                     "name": team_name,
-                    "points": int(team_points.replace(" pts", "").replace("(", "").replace(")", "")),
-                    "players": team_players
+                    "points": int(team_points.replace(" HLTV points", "").replace("(", "").replace(")", "")),
+                    "players": collect_players(team)
                 })
             
-            Generator.save_as_dataframe(data=teams, filename="static/ranking_hltv")
+            Generator.save_as_csv(data=teams, filename="static/ranking_hltv")
+            Generator.save_as_json(data=teams, filename="static/ranking_hltv")
             print("Ranking collected successfully.")
         except Exception as e:
             print(f"Error collecting ranking: {e}")
