@@ -45,9 +45,9 @@ class HltvRoutine:
         self.scraper.allow_cookies()
         sleep(5)
 
-        if self.team:
-            self.matches_routine()
-            sleep(5)
+        # if self.team:
+        #     self.matches_routine()
+        #     sleep(5)
 
         self.scraper.driver.quit()
         print("Driver closed.")

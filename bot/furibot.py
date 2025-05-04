@@ -8,12 +8,12 @@ from config.enviroment import Enviroment
 
 class Furibot:
 
-    def __init__(self):
+    def __init__(self, team="Furia"):
 
         env = Enviroment.get_enviroment()
         print(f"Running in {env} mode")
         
-
+        self.team = team
         self.bot = Bot(token=env['bot_token'], default=DefaultBotProperties(parse_mode=ParseMode.HTML))
         self.dp = Dispatcher()
         self.commander = FuriCommands(self.dp)
