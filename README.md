@@ -41,9 +41,9 @@ O projeto foi inicialmente construido utilizando o **GEMINI**, mas pode facilmen
 
 Entrando em contato com [@a_furibot](https://t.me/@a_furibot), os comandos a seguir podem ser utilizados:
 
-1 - **/start** - iniciar a interação com o bot
-2 - **/ai** <texto> - interagir com agente de IA
-3 - **/next** - responde com a proxima partida da FURIA
-4 - **/last** - responde com a ultima partida da FURIA
-5 - **/ranking** - exibe o ranking atual da FURIA na HLTV e a quantidade de pontos
-6 - **/roster** - exibe a formação atua da equipe de CS
+1. **/start** - iniciar a interação com o bot
+2. **/ai** <texto> - interagir com agente de IA
+3. **/next** - responde com a proxima partida da FURIA
+4. **/last** - responde com a ultima partida da FURIA
+5. **/ranking** - exibe o ranking atual da FURIA na HLTV e a quantidade de pontos
+6. **/roster** - exibe a formação atua da equipe de CS
