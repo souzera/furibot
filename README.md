@@ -22,6 +22,7 @@ Crie um arquivo `.env` e adicione as chaves necessarias para a execucao do proje
 ```env
 BOT_TOKEN="########"
 GEMINI_KEY="#######"
+PANDASCORE_KEY=#######
 ```
 
 *Como consigo o `BOT_TOKEN`?*
@@ -35,3 +36,14 @@ A chave do gemini pode ser solicitada pelo link fornecido pela documentacao do a
 *Posso utilizar outro agente de IA?*
 
 O projeto foi inicialmente construido utilizando o **GEMINI**, mas pode facilmente ser adaptadado para outros agentes com poucas mudancas.
+
+## Comandos
+
+Entrando em contato com [@a_furibot](https://t.me/@a_furibot), os comandos a seguir podem ser utilizados:
+
+1 - **/start** - iniciar a interação com o bot
+2 - **/ai** <texto> - interagir com agente de IA
+3 - **/next** - responde com a proxima partida da FURIA
+4 - **/last** - responde com a ultima partida da FURIA
+5 - **/ranking** - exibe o ranking atual da FURIA na HLTV e a quantidade de pontos
+6 - **/roster** - exibe a formação atua da equipe de CS
